@@ -5,5 +5,5 @@ let employees = [
 ];
 
 
-let salaries = employees.reduce((acc,x)=> acc.salary> x.salary ? acc : x,0)
+let salaries = employees.reduce((acc,x)=> acc.salary> x.salary ? acc.name : x.name,0)
 console.log(salaries);
