@@ -1,9 +1,14 @@
+
+
+
+
+
 // ** DYNAMIC RENDEARING **
 // ---------------------------------
 // ---------------------------------
 
-import React from 'react'
-import { useState } from 'react';
+// import React from 'react'
+// import { useState } from 'react';
 
 const App = () => {
   let fruits = ['apple' , 'orange' , "mango" ,'pineapple' , 'watermelon' , 'kiwi'];
@@ -26,3 +31,4 @@ const App = () => {
 }
 
 export default App
+
