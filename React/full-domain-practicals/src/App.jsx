@@ -1,4 +1,28 @@
+// Create a Greeting component that accepts name and isLoggedIn props. If isLoggedIn is true show Hello, {name},
+//  otherwise show Please log in. Use default prop for name as "Guest".
 
+import React from 'react'
+import { useState } from 'react'
+const Greeting = ({name= 'guest',isLoggedIn})=>{
+  return (
+    <>
+    <h3>{isLoggedIn ? `Hello ${name}` : 'please Log in'}</h3>
+    </>
+  )
+}
+
+const App = () => {
+  const [isLoggedIn , setIsLoggedin] = useState(false);
+  const name = 'fathima'
+  return (
+    <div>
+      <button onClick={()=>setIsLoggedin(isLoggedIn ? false :true)}>{isLoggedIn ? 'log out' : 'log in'}</button>
+      <Greeting name={name} isLoggedIn={isLoggedIn}/>
+    </div>
+  )
+}
+
+export default App
 
 
 
