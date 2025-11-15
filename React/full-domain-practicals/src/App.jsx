@@ -1,14 +1,21 @@
 import React from 'react'
 import useToggle from '../customHooks/useToggle'
+import useCounter from '../customHooks/useCounter';
 
 const App = () => {
     const {data,markToggle} = useToggle();
+    const {count,increment,decrement,reset} = useCounter();
   return (
     <div>
         <button onClick={markToggle}>{data ? 'hide': 'show'}</button>
         {
         <h5>{data ? 'Hello Im visible!' : ''}</h5>
         }
+
+        <h2>count : {count}</h2>
+        <button onClick={increment}>increment</button>
+        <button onClick={decrement}>decrement</button>
+        <button onClick={reset}>reset</button>
     </div>
   )
 }
