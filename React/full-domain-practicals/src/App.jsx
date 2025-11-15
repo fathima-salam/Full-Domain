@@ -1,21 +1,38 @@
 import React from 'react'
-import ProductListing from '../components/ProductListing'
-import SearchInput from '../components/SearchInput'
-import { useState } from 'react'
-const App = () => {
-    let productListes = ['Apple iPhone 14','Samsung Galaxy S23','OnePlus Nord CE 3','Redmi Note 12','Realme Narzo 60','Sony WH-1000XM4 Headphones','Boat Airdopes 141','Apple MacBook Air M2','Dell Inspiron 15','HP Pavilion x360']
+import useToggle from '../customHooks/useToggle'
 
-    const [product,setProducts] = useState(productListes);
-    const [search,setSearch] = useState('');
+const App = () => {
+    const {data,markToggle} = useToggle();
   return (
     <div>
-        <SearchInput setSearch={setSearch}/>
-        <ProductListing product={product} productsList={productListes} search={search}/>
+        <button onClick={markToggle}>{data ? 'hide': 'show'}</button>
+        {
+        <h5>{data ? 'Hello Im visible!' : ''}</h5>
+        }
     </div>
   )
 }
 
 export default App
+
+// import React from 'react'
+// import ProductListing from '../components/ProductListing'
+// import SearchInput from '../components/SearchInput'
+// import { useState } from 'react'
+// const App = () => {
+//     let productListes = ['Apple iPhone 14','Samsung Galaxy S23','OnePlus Nord CE 3','Redmi Note 12','Realme Narzo 60','Sony WH-1000XM4 Headphones','Boat Airdopes 141','Apple MacBook Air M2','Dell Inspiron 15','HP Pavilion x360']
+
+//     const [product,setProducts] = useState(productListes);
+//     const [search,setSearch] = useState('');
+//   return (
+//     <div>
+//         <SearchInput setSearch={setSearch}/>
+//         <ProductListing product={product} productsList={productListes} search={search}/>
+//     </div>
+//   )
+// }
+
+// export default App
 
 
 // import React, { useEffect, useState } from 'react'
