@@ -20,7 +20,7 @@ class binaryTree{
         while(queue.length > 0){
             let current = queue.shift();
             if(!current.left){
-                current.left = newNode
+                current.left = newNode;
                 break;
             }else{
                 queue.push(current.left);
